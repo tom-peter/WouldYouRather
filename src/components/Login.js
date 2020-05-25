@@ -2,14 +2,24 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { setAuthedUser } from '../actions/authedUser'
+import { handleInitialUserData } from '../actions/users'
+import { handleInitialQuestionData } from '../actions/questions'
 
 class Login extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-	  this.props.dispatch(setAuthedUser({ authedUser: '12345'}))
+    let id = '12345'
+    this.props.dispatch(setAuthedUser(id))
+    // Get initial question data
+    this.props.dispatch(handleInitialQuestionData());
   };
   
+  componentDidMount() {
+	  // Get initial user data
+    this.props.dispatch(handleInitialUserData());
+  }
+
   render() {
 
     console.log('Login render props', this.props)
@@ -26,8 +36,7 @@ class Login extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log('mapState', state);
-  return ( state === null ) ? { authedUser: null } : state;
+  return ( state === null ) ? {} : state;
 }
 
 export default connect(mapStateToProps)(Login);

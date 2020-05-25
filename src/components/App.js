@@ -44,8 +44,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log('mapState', state);
-  return ( state === null ) ? { authedUser: null } : state;
+  return ( state === null ) ? {} : state;
 }
 
 export default connect(mapStateToProps)(App);

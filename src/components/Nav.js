@@ -13,7 +13,7 @@ class Nav extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return ( state === null ) ? { authedUser: null } : state;
+  return ( state === null ) ? {} : state;
 }
 
 export default connect(mapStateToProps)(Nav);
