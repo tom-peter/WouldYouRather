@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import Login from './Login';
 import Nav from './Nav';
 import Home from './Home';
 import Poll from './Poll';
@@ -22,14 +23,20 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route component={Nav} />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/questions/:question_id" component={Poll} />
-            <Route path="/add" component={NewPoll} />
-            <Route path="/leaderboard" component={Leaderboard} />
-            <Route component={ErrorPage} />
-          </Switch>
+          {this.props.authedUser === null ? (
+            <Login />
+          ) : (
+            <Fragment>
+              <Route component={Nav} />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/questions/:question_id" component={Poll} />
+                <Route path="/add" component={NewPoll} />
+                <Route path="/leaderboard" component={Leaderboard} />
+                <Route component={ErrorPage} />
+              </Switch>
+            </Fragment>
+          )}  
         </div>
       </Router>
     );
@@ -37,7 +44,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log('mapState', state, this.props);
+  console.log('mapState', state);
   return ( state === null ) ? { authedUser: null } : state;
 }
 
