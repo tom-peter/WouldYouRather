@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Nav from './Nav';
 import Home from './Home';
@@ -9,7 +10,14 @@ import Leaderboard from './Leaderboard';
 import ErrorPage from './ErrorPage';
 import '../App.css';
 
+import { setAuthedUser } from '../actions/authedUser'
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.props.dispatch(setAuthedUser(null));
+  }
+
   render() {
     return (
       <Router>
@@ -28,4 +36,9 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  console.log('mapState', state, this.props);
+  return ( state === null ) ? { authedUser: null } : state;
+}
+
+export default connect(mapStateToProps)(App);
