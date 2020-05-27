@@ -9,7 +9,7 @@ class Login extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    let id = '12345'
+    let id = 'robinson';
     this.props.dispatch(setAuthedUser(id))
     // Get initial question data
     this.props.dispatch(handleInitialQuestionData());
