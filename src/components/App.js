@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
+import LoadingBar from 'react-redux-loading-bar';
 
 import Login from './Login';
 import Nav from './Nav';
 import Home from './Home';
-import Poll from './Poll';
+import SinglePoll from './SinglePoll';
 import NewPoll from './NewPoll';
 import Leaderboard from './Leaderboard';
 import ErrorPage from './ErrorPage';
@@ -23,14 +24,15 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <LoadingBar />
           {this.props.authedUser === null ? (
             <Login />
           ) : (
-            <Fragment>
+            <Fragment>              
               <Route component={Nav} />
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/questions/:question_id" component={Poll} />
+                <Route path="/questions/:question_id" component={SinglePoll} />
                 <Route path="/add" component={NewPoll} />
                 <Route path="/leaderboard" component={Leaderboard} />
                 <Route component={ErrorPage} />

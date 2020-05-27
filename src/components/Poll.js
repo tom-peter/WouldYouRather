@@ -14,8 +14,8 @@ class Poll extends React.Component {
         <div>{ this.props.name }</div>
         <div>{ optionOne.text }</div>
         <div>{ optionTwo.text }</div>
-        <Link to={`/question/${id}`}>
-          <button>{this.props.type === 'answered' ? 'View Poll' : 'Answer Poll'}</button>
+        <Link to={`/questions/${id}`}>
+          <button>{this.props.answer === null ? 'Answer Poll' : 'View Poll'}</button>
         </Link>
       </div>        
     );

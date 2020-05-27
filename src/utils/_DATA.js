@@ -2,7 +2,7 @@ let users = {
   robinson: {
     id: 'robinson',
     name: 'Robinson',
-    avatarURL: './images/avatar1.jpg',
+    avatarURL: '/images/avatar1.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +14,7 @@ let users = {
   sarah: {
     id: 'sarah',
     name: 'Sarah',
-    avatarURL: './images/avatar2.jpg',
+    avatarURL: '/images/avatar2.jpg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   elvira: {
     id: 'elvira',
     name: 'Elvira',
-    avatarURL: './images/avatar3.jpg',
+    avatarURL: '/images/avatar3.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
@@ -35,7 +35,7 @@ let users = {
   anastasia: {
     id: 'anastasia',
     name: 'Anastasia',
-    avatarURL: './images/avatar4.jpg',
+    avatarURL: '/images/avatar4.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "loxhs1bqm25b708cmbf3g": 'optionTwo'
@@ -45,7 +45,7 @@ let users = {
   gabriel: {
     id: 'gabriel',
     name: 'Gabriel',
-    avatarURL: './images/avatar5.jpg',
+    avatarURL: '/images/avatar5.jpg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -55,7 +55,7 @@ let users = {
   george: {
     id: 'george',
     name: 'George',
-    avatarURL: './images/avatar6.jpg',
+    avatarURL: '/images/avatar6.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo'
@@ -65,7 +65,7 @@ let users = {
   edward: {
     id: 'edward',
     name: 'Edward',
-    avatarURL: './images/avatar7.jpg',
+    avatarURL: '/images/avatar7.jpg',
     answers: {},
     questions: [],
   }

@@ -18,6 +18,7 @@ class Home extends React.Component {
                     poll={poll} 
                     name={this.props.users[poll.author].name} 
                     avatar={this.props.users[poll.author].avatarURL} 
+                    answer={null}
                     type='unanswered' 
                   />
                 </li>
@@ -33,6 +34,7 @@ class Home extends React.Component {
                   poll={poll} 
                   name={this.props.users[poll.author].name} 
                   avatar={this.props.users[poll.author].avatarURL} 
+                  answer={this.props.users[this.props.authedUser].answers[poll.id]}
                   type='answered' 
                 />
               </li>
@@ -55,6 +57,7 @@ function mapStateToProps({ authedUser, users, questions }) {
     .sort((a, b) => b.timestamp - a.timestamp);
 
   return {
+    authedUser,
     answeredPolls,
     unansweredPolls,
     users
