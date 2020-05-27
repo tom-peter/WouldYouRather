@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Poll from './Poll';
+import { Poll, LIST } from './Poll';
 
 class Home extends React.Component {
   state = {
@@ -29,6 +29,7 @@ class Home extends React.Component {
               name={this.props.users[poll.author].name} 
               avatar={this.props.users[poll.author].avatarURL} 
               answer={this.getAnswer(poll, answered)}
+              type={LIST}
             />
           </li>
         )) }

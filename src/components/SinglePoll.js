@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Poll from './Poll';
+import { Poll, SINGLE } from './Poll';
 import ErrorPage from './ErrorPage'
 
 class SinglePoll extends React.Component {
@@ -22,7 +22,7 @@ class SinglePoll extends React.Component {
           name={name} 
           avatar={avatar} 
           answer={answer}
-          type='unanswered' 
+          type={SINGLE} 
         />                 
       </div>
     );
