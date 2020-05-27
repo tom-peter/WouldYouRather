@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Poll from './Poll';
+
 class Home extends React.Component {
 
   render() {
@@ -12,7 +14,12 @@ class Home extends React.Component {
             <ul>
               { this.props.unansweredPolls.map((poll) => (
                 <li key={poll.id}>
-                { poll.id }
+                  <Poll 
+                    poll={poll} 
+                    name={this.props.users[poll.author].name} 
+                    avatar={this.props.users[poll.author].avatarURL} 
+                    type='unanswered' 
+                  />
                 </li>
               )) }
             </ul>
@@ -22,7 +29,12 @@ class Home extends React.Component {
             <ul>
               { this.props.answeredPolls.map((poll) => (
               <li key={poll.id}>
-                { poll.id }
+                <Poll 
+                  poll={poll} 
+                  name={this.props.users[poll.author].name} 
+                  avatar={this.props.users[poll.author].avatarURL} 
+                  type='answered' 
+                />
               </li>
               )) }
             </ul>          
@@ -44,7 +56,8 @@ function mapStateToProps({ authedUser, users, questions }) {
 
   return {
     answeredPolls,
-    unansweredPolls
+    unansweredPolls,
+    users
   }
 }
 
