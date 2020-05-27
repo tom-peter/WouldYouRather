@@ -23,6 +23,8 @@ class SinglePoll extends React.Component {
           avatar={avatar} 
           answer={answer}
           type={SINGLE} 
+          authedUser={authedUser}
+          dispatch={this.props.dispatch}
         />                 
       </div>
     );

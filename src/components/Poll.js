@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
+import { handleSaveAnswer } from '../actions/questions'
+
 export const SINGLE = 'single';
 export const LIST = 'list';
 
@@ -33,8 +35,7 @@ export class Poll extends React.Component {
   }
 
   selectOption(e) {
-    // TODO: 
-    console.log('Target: ', e.target);
+    this.props.dispatch(handleSaveAnswer(this.props.authedUser, this.props.poll.id, e.target.id));
   }
 
   pollButton(id) {
