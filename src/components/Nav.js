@@ -2,7 +2,13 @@ import React from 'react';
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux';
 
+import { setAuthedUser } from '../actions/authedUser'
+
 class Nav extends React.Component {
+
+  logout() {
+    this.props.dispatch(setAuthedUser(null));
+  }
 
   render() {
     
@@ -20,7 +26,7 @@ class Nav extends React.Component {
         <div>{this.props.location.pathname}</div>
         <img className="nav-avatar" src={ authedUserAvatar } alt={ authedUserName } />
         <div className="nav-name">{authedUserName}</div>          
-        <button>Logout</button>
+        <div onClick={ (e) => this.logout() } className="pointer">Logout</div>
       </div>
     );
   }

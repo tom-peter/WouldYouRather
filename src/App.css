@@ -37,6 +37,7 @@
 
 .nav-name {
   justify-self: start;
+  cursor: default;
 }
 
 /* main part */
@@ -168,4 +169,8 @@ li {
 /* General */
 .pointer {
   cursor: pointer;
+}
+
+.default-cursor {
+  cursor: default;
 }
