@@ -8,6 +8,7 @@ class Home extends React.Component {
     showUnanswered: true
   }
 
+  // Change between poll lists (unanswered or answered)  
   changeList(e, showUnanswered) {
     e.target.id === 'unanswered' && showUnanswered === false &&
       this.setState({ showUnanswered: true });
@@ -15,10 +16,17 @@ class Home extends React.Component {
       this.setState({ showUnanswered: false });
   }
 
-  getAnswer(poll, answered) {
-    return (answered ? this.props.users[this.props.authedUser].answers[poll.id] : null );
+  // Set the active class on poll lists (unanswered or answered)  
+  setPollListClassName(list) {
+     if (((this.state.showUnanswered === true) && (list === 'unanswered')) ||
+        ((this.state.showUnanswered === false) && (list === 'answered'))) {
+          return 'poll-list-active'
+        } else {
+          return 'poll-list'
+        }
   }
 
+  // List the selected poll list (unanswered or answered)  
   listSelectedPolls(selectedPolls, answered) {
     return (
       <ul>
@@ -37,16 +45,22 @@ class Home extends React.Component {
     )
   }
 
+  getAnswer(poll, answered) {
+    return (answered ? this.props.users[this.props.authedUser].answers[poll.id] : null );
+  }
+
   render() {
     return (
-      <div>
-        <h3>Home</h3>
-        <div id='unanswered' onClick={ (e) => this.changeList(e, this.state.showUnanswered) }>
-          Unanswered
+      <div className="main">
+        <h1>Would you rather ...</h1>
+        <div className="poll-list-options">
+          <div id="unanswered" className={this.setPollListClassName('unanswered')} onClick={ (e) => this.changeList(e, this.state.showUnanswered) }>
+            Unanswered questions
+          </div>
+          <div id='answered' className={this.setPollListClassName('answered')} onClick={ (e) => this.changeList(e, this.state.showUnanswered) }>
+            Answered questions
+          </div>
         </div>
-        <div id='answered' onClick={ (e) => this.changeList(e, this.state.showUnanswered) }>
-          Answered
-        </div>            
         { this.state.showUnanswered ? 
           this.listSelectedPolls(this.props.unansweredPolls, false) :
           this.listSelectedPolls(this.props.answeredPolls, true)

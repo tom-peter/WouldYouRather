@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 import { Poll, SINGLE } from './Poll';
 import ErrorPage from './ErrorPage'
@@ -15,8 +16,8 @@ class SinglePoll extends React.Component {
     if (this.props.noMatch) return <ErrorPage />;
 
     return (
-      <div>
-        <h3>SinglePoll</h3>
+      <div className="main">
+        <h1>Would you rather ...</h1>
         <Poll 
           poll={poll} 
           name={name} 
@@ -25,7 +26,7 @@ class SinglePoll extends React.Component {
           type={SINGLE} 
           authedUser={authedUser}
           dispatch={this.props.dispatch}
-        />                 
+        />
       </div>
     );
   }
