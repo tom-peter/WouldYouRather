@@ -183,6 +183,24 @@ li {
   padding: 0 20px 0 20px;
 }
 
+/* New poll */
+.new-poll {
+  padding: 10px 20px 20px 20px;
+  border: 2px solid blueviolet;
+  border-radius: 5px;
+  cursor: default;
+}
+
+.new-poll-options {
+  padding-bottom: 10px;
+}
+
+input {
+  font-size: 16px;
+  margin: 10px;
+  padding: 2px 5px 2px 5px;
+}
+
 /* General */
 .pointer {
   cursor: pointer;

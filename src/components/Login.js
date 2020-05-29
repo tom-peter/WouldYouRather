@@ -13,9 +13,7 @@ class Login extends React.Component {
   handleChange = e => {
     let value = e.target.value;
     if (value === '0') value = null;
-    this.setState(() => ({
-      value
-    }));
+    this.setState({ value });
   }
 
   handleSubmit = e => {

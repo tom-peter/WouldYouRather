@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, SAVE_ANSWER } from '../actions/questions'
+import { RECEIVE_QUESTIONS, SAVE_ANSWER, SAVE_QUESTION } from '../actions/questions'
 
 // Reducer - specify _how_ the application's state changes 
 // in response to actions sent to the store
@@ -20,6 +20,11 @@ export default function questions(state = {}, action) {
             votes: state[qid][answer].votes.concat([authedUser])
           }
         }
+      };
+    case SAVE_QUESTION:
+      return {
+        ...state,
+        [action.question.id]: action.question,
       };
     default:
       return state
