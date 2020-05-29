@@ -10,6 +10,7 @@ import SinglePoll from './SinglePoll';
 import NewPoll from './NewPoll';
 import Leaderboard from './Leaderboard';
 import ErrorPage from './ErrorPage';
+import Footer from './Footer';
 import '../App.css';
 
 import { setAuthedUser } from '../actions/authedUser'
@@ -37,6 +38,7 @@ class App extends Component {
                 <Route path="/leaderboard" component={Leaderboard} />
                 <Route component={ErrorPage} />
               </Switch>
+              <Route component={Footer} />
             </Fragment>
           )}  
         </div>
