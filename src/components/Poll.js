@@ -71,7 +71,6 @@ export class Poll extends React.Component {
   }
 
   render() {
-    console.log('Poll: ', this.props);
     const { id } = this.props.poll;
     const { type, answer } = this.props;
 

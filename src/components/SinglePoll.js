@@ -9,7 +9,6 @@ class SinglePoll extends React.Component {
 
   render() {
   
-    console.log('Single / render / props: ', this.props)
     const { authedUser, poll, name, avatar, answer } = this.props;
 
     if (!this.props.questionsLoaded) return null;
@@ -27,6 +26,9 @@ class SinglePoll extends React.Component {
           authedUser={authedUser}
           dispatch={this.props.dispatch}
         />
+        <div className="back">
+          <Link to="/">Back to Home</Link>
+        </div>
       </div>
     );
   }
@@ -36,7 +38,7 @@ function mapStateToProps({ authedUser, users, questions }, props) {
   const id = props.match.params.question_id;
   const poll = questions[id];
   const questionsLoaded = Object.keys(questions).length;
-  let name, avatar, answer, noMatch;
+  let name, avatar, answer;
 
   if ( questionsLoaded ) {
     if (poll === undefined) return { questionsLoaded, noMatch: true };

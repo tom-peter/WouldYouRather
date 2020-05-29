@@ -23,10 +23,10 @@ class Nav extends React.Component {
         <NavLink exact to="/" className="navitem" isActive={isActive.bind(this, '/')} activeClassName="nav-active">Home</NavLink>
         <NavLink exact to="/add" className="navitem" isActive={isActive.bind(this, '/add')} activeClassName="nav-active">New Poll</NavLink>
         <NavLink exact to="/leaderboard" className="navitem" isActive={isActive.bind(this, '/leaderboard')} activeClassName="nav-active">Leaderboard</NavLink>
-        <div>{this.props.location.pathname}</div>
+        <div></div>
         <img className="nav-avatar" src={ authedUserAvatar } alt={ authedUserName } />
         <div className="nav-name">{authedUserName}</div>          
-        <div onClick={ (e) => this.logout() } className="pointer">Logout</div>
+        <div onClick={ (e) => this.logout() } className="nav-logout">Logout</div>
       </div>
     );
   }

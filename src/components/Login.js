@@ -34,7 +34,6 @@ class Login extends React.Component {
   selectUser() {
     const users = this.props.users;
     const IDs = Object.keys(users);
-    console.log(users, IDs);
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -58,7 +57,6 @@ class Login extends React.Component {
   
   render() {
 
-    console.log('Login render props', this.props)
     const IDs = Object.keys(this.props.users); 
 
     return (      

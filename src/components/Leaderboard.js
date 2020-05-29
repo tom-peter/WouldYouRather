@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class Leaderboard extends React.Component {
@@ -30,6 +31,9 @@ class Leaderboard extends React.Component {
             </li>
           )) }
         </ul>
+        <div className="back">
+          <Link to="/">Back to Home</Link>
+        </div>
       </div>
     );
   }

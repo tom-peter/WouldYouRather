@@ -24,7 +24,7 @@ select {
   background-color: blueviolet;
   min-height: 48px;
   display: grid;
-  grid-template-columns: 3fr 3fr 3fr 3fr 1fr 3fr 3fr;
+  grid-template-columns: 3fr 3fr 3fr 3fr 32px 3fr 3fr;
   column-gap: 15px;
   align-items: center;
   justify-items: center;
@@ -57,6 +57,13 @@ select {
   cursor: default;
 }
 
+.nav-logout {
+  padding: 2px 8px 3px 8px;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /* main part */
 .main {
   max-width: 600px;
@@ -68,7 +75,7 @@ a {
   text-decoration: none;
 }
 
-.btn {
+.btn, .back {
   text-transform: uppercase;
   margin: 10px auto;
   padding: 10px;
@@ -81,7 +88,11 @@ a {
   position: relative;
 }
 
-.btn:hover {
+.back {
+  margin-top: 30px;
+}
+
+.btn:hover, .back:hover {
   border-color: #009900;
   background-color: rgba(0, 192, 0, 0.25);
 }

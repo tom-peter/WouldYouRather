@@ -6,6 +6,7 @@ class ErrorPage extends React.Component {
     return (
       <div>
         <h3>Error</h3>
+        <div>Ooops. The requested URL was not found.</div>
       </div>
     );
   }

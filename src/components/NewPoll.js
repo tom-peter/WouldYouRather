@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
 import { handleSaveQuestion } from '../actions/questions';
@@ -71,6 +71,9 @@ class NewPoll extends React.Component {
             </button>
           </form>
           
+        </div>
+        <div className="back">
+          <Link to="/">Back to Home</Link>
         </div>
       </div>
     );
